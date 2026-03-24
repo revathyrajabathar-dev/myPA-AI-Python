@@ -6,7 +6,7 @@ from handlers.voice import speak
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("Listing...")
+        print("Listening...")
         r.pause_threshold = 0.5
         audio = r.listen(source)
     try:
