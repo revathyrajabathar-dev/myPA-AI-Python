@@ -1,14 +1,20 @@
 import smtplib
+import os
 from handlers.voice import speak
 from handlers.listener import takeCommand
 
 
 def _sendEmail(to, content):
+    email_user = os.environ.get("EMAIL_USER")
+    email_password = os.environ.get("EMAIL_PASSWORD")
+    if not email_user or not email_password:
+        raise RuntimeError("Email credentials are not configured. Please set EMAIL_USER and EMAIL_PASSWORD environment variables.")
+
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login("user-name@xyz.com", "pwd")
-    server.sendmail("user-name@xyz.com", to, content)
+    server.login(email_user, email_password)
+    server.sendmail(email_user, to, content)
     server.close()
 
 
