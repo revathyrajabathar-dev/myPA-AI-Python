@@ -9,6 +9,6 @@ def handle(query):
     elif 'date' in query:
         now = datetime.datetime.now()
         speak("The current date is")
-        speak(now.day)
-        speak(now.month)
-        speak(now.year)
+        speak(str(now.day))
+        speak(str(now.month))
+        speak(str(now.year))
