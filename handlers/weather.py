@@ -5,7 +5,7 @@ from handlers.listener import takeCommand
 
 def handle(query):
     api_key = "YOUR-API_KEY"
-    base_url = "http://api.openweathermap.org/data/2.5/weather?"
+    base_url = "https://api.openweathermap.org/data/2.5/weather?"
     speak("tell me which city")
     city_name = takeCommand()
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name
