@@ -10,7 +10,7 @@ def handle(query):
     city_name = takeCommand()
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name
     x = requests.get(complete_url).json()
-    if x["cod"] != "404":
+    if str(x.get("cod")) != "404" and "main" in x and "weather" in x:
         y = x["main"]
         z = x["weather"]
         r = (f"in {city_name} Temperature is {int(y['temp'] - 273.15)} degree celsius "
