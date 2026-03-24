@@ -58,7 +58,7 @@ myPA-AI-Python/
 | Package | Version | Purpose |
 |---|---|---|
 | pyttsx3 | 2.90 | Text-to-speech engine |
-| SpeechRecognition | 3.10.0 | Microphone voice input |
+| SpeechRecognition | 3.15.1 | Microphone voice input |
 | wikipedia | 1.4.0 | Wikipedia search |
 | psutil | 5.9.5 | CPU and battery stats |
 | PyAutoGUI | 0.9.54 | Screenshots |
